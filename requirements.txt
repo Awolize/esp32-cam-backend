@@ -1,5 +1,11 @@
-numpy==1.23.4
-opencv_python==4.6.0.66
-Pillow==9.2.0
-requests==2.28.1
+numpy
+opencv_python
+Pillow
+requests
+black
+
+django
+ffmpeg-python
+
+#to be removed
 flask
