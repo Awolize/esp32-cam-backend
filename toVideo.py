@@ -1,8 +1,9 @@
 # server.py
-from datetime import datetime
+import time
 import os
 import glob
 from pathlib import Path
+from cv2 import log
 import django
 import ffmpeg
 from shutil import copyfile
@@ -11,7 +12,7 @@ from flask import Flask, jsonify, send_file
 
 app = Flask(__name__)
 
-last_updated = datetime.utcnow()
+last_updated = int(time.time())
 
 
 @app.route("/api/new_video/")
@@ -48,7 +49,8 @@ def fetch_info():
 
 def toVideo():
     global last_updated
-    last_updated = datetime.utcnow()
+    last_updated = int(time.time())
+    print(last_updated)
 
     try:
 
@@ -104,4 +106,5 @@ def toVideo():
 
 if __name__ == "__main__":
     # toVideo()  # for testing
+
     app.run(host="0.0.0.0", debug=True)
