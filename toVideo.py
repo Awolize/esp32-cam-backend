@@ -21,10 +21,8 @@ def get_tasks():
 
 
 def clear_images():
-    files = glob.glob("images/*")
+    files = glob.glob("images/0*")
     for f in files:
-        if f == "images/thumbnail.png":
-            pass
         os.remove(f)
 
 

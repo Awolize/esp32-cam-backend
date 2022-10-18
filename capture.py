@@ -23,7 +23,7 @@ def getFrame() -> npt.NDArray:
 
 url = "http://192.168.1.165:8081"
 
-img_path = img_path = "images/" + "00000.png"  # init name
+img_path = img_path = "images/" + "000000.png"  # init name
 
 while True:
     frame = getFrame()
@@ -36,7 +36,7 @@ while True:
         currentImages[-1] = currentImages[-1].replace("//", "\\")
         count = int(currentImages[-1].replace("images/", "").replace(".png", ""))
         count = count + 1
-        img_path = "images/" + str(count).zfill(5) + ".png"
+        img_path = "images/" + str(count).zfill(6) + ".png"
 
     print(getTime(), img_path)
     cv2.imwrite(img_path, frame)
