@@ -64,7 +64,7 @@ def toVideo():
         print(e)
         return
 
-    # clear_images()
+    clear_images()
 
     if not Path.exists(Path("videos/3.mp4")):
         Path.rename(Path("videos/2.mp4"), "videos/3.mp4")
