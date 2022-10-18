@@ -30,7 +30,7 @@ while True:
 
     cv2.fastNlMeansDenoisingColored(frame, frame, 10, 10, 7, 21)
 
-    currentImages = glob.glob("images/*.png")
+    currentImages = glob.glob("images/0*.png")
     if len(currentImages) > 0:
         currentImages.sort()
         currentImages[-1] = currentImages[-1].replace("//", "\\")
