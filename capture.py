@@ -22,12 +22,13 @@ def getFrame() -> npt.NDArray:
 
 
 url = "http://192.168.1.165:8081"
-
 img_path = img_path = "images/" + "000000.png"  # init name
+freq_seconds = 60
 
 while True:
     frame = getFrame()
 
+    print(frame)
     cv2.fastNlMeansDenoisingColored(frame, frame, 10, 10, 7, 21)
 
     currentImages = glob.glob("images/0*.png")
@@ -41,4 +42,4 @@ while True:
     print(getTime(), img_path)
     cv2.imwrite(img_path, frame)
 
-    time.sleep(60)
+    time.sleep(freq_seconds)
