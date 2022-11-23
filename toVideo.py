@@ -56,7 +56,9 @@ def toVideo():
 
         (
             ffmpeg.input("./images/*.png", pattern_type="glob", framerate=30)
-            .output("videos/2.mp4")  # pix_fmt='yuv420p', vframes=100)
+            .output(
+                "videos/2.mp4", pix_fmt="yuv420p"
+            )  # pix_fmt='yuv420p', vframes=100)
             .overwrite_output()
             .run()
         )
@@ -89,7 +91,7 @@ def toVideo():
                 in_file1,
                 in_file2,
             )
-            .output("videos/3.mp4")
+            .output("videos/3.mp4", pix_fmt="yuv420p")
             .overwrite_output()
             .run()
         )
