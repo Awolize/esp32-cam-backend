@@ -29,6 +29,14 @@ while True:
     ret, frame = getFrame()
     if ret == True:
         cv2.fastNlMeansDenoisingColored(frame, frame, 10, 10, 7, 21)
+        cv2.putText(
+            frame,
+            str(datetime.now().strftime("%Y/%m/%d, %H:%M:%S")),
+            (20, 40),
+            2,
+            0.8,
+            (255, 255, 2),
+        )
 
         currentImages = glob.glob("images/0*.png")
         if len(currentImages) > 0:
@@ -40,5 +48,7 @@ while True:
 
         print(getTime(), img_path)
         cv2.imwrite(img_path, frame)
+    else:
+        print("Failed to get frame")
 
     time.sleep(freq_seconds)
